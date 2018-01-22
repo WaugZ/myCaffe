@@ -57,18 +57,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_convert.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/my_AlexNet_reimplement/data_convert.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="68" column="51" lean-forward="false" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
-              <folding>
-                <element signature="e#16#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="error_compute.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/my_AlexNet_reimplement/error_compute.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -81,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="create_lmdb.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="create_lmdb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/my_AlexNet_reimplement/create_lmdb.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="788">
@@ -89,6 +77,16 @@
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -441,14 +439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/first_try/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/first_try/train_with_bash.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -835,6 +825,14 @@
           <folding>
             <element signature="e#15#24#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
