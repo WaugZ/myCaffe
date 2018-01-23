@@ -20,7 +20,7 @@ transformer.set_mean('data', np.array([104, 117, 123]))
 # transformer.set_raw_scale('data', 255)
 # transformer.set_channel_swap('data', (2, 1, 0))
 
-net.blobs['data'].reshape(10,        # batch size
+net.blobs['data'].reshape(1,        # batch size
                           3,         # 3-channel (BGR) images
                           227, 227)  # image size is 227x227
 
