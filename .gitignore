@@ -1,4 +1,5 @@
 caffe/
 .idea
 data/
-.mdb
+*_lmdb
+myfile/
