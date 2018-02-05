@@ -1,3 +1,4 @@
 caffe/
 .idea
 data/
+.mdb
