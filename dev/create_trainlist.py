@@ -4,9 +4,13 @@ import subprocess
 import os
 import shutil
 import random
+import create_lmdb
 
 data_path = "/media/store/someDataSet/ILSVRC12_split"
 output_path = "/media/store/myAN"  # to save the train.txt and val.txt
+
+NEED_VAL = True
+NEED_LMDB = True
 
 if not os.path.exists(output_path):
     os.makedirs(output_path)
@@ -69,4 +73,11 @@ def create_txt(TRAIN=True, VAL=True):
 
 
 if __name__ == "__main__":
-    create_txt(TRAIN=True, VAL=True)
+    create_txt(VAL=NEED_VAL)
+    if NEED_LMDB:
+        train_txt = os.path.join(output_path, 'train.txt')
+        val_txt = os.path.join(output_path, 'val.txt')
+        train_lmdb = os.path.join(output_path, "img_train_lmdb")
+        val_lmdb = os.path.join(output_path, "img_val_lmdb")
+        create_lmdb.create_lmdb(train_txt_path=train_txt, train_lmdb_output_path=train_lmdb, val_txt_path=val_txt,
+                       val_lmdb_output_path=val_lmdb, new_height=256, new_width=256, SHUFFLE=False)

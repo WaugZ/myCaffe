@@ -5,7 +5,7 @@ import numpy as np
 import os
 import cv2
 
-model_path = "/media/store/myAN/caffe_alexnet_train_iter_450000.caffemodel"
+model_path = "/media/store/myAN/caffe_alexnet_train_iter_430000.caffemodel"
 deploy_path = "/media/store/myAN/deploy.prototxt"
 val_path = "/media/store/someDataSet/ILSVRC12_split/ILSVRC2012_img_val"
 labels_file = "/media/store/myAN/label.txt"
@@ -38,10 +38,9 @@ for root, _, files in os.walk(val_path):
         top_k = net.blobs['prob'].data[0].flatten().argsort()[::-1][:5]
 
         label_name = labels[top_k]
-        labe_index = str(top_k[0])
-        confidence = net.blobs['prob'].data[0][top_k[0]]
 
         true_label = os.path.basename(root)
+
         if true_label not in label_name:
             error += 1
             # print "Not good"

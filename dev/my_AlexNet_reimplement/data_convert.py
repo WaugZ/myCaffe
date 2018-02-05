@@ -4,9 +4,10 @@ import subprocess
 import os
 import shutil
 import random
+import create_lmdb as cl
 
 data_path = "/media/store/someDataSet/ILSVRC12_split"
-output_path = "/media/store/myAN"  # to save the train.txt and val.txt
+output_path = "/media/store/myANN"  # to save the train.txt and val.txt
 
 if not os.path.exists(output_path):
     os.makedirs(output_path)
@@ -25,7 +26,7 @@ def create_txt():
     labels = {}
     with open(os.path.join(output_path, 'label.txt'), 'ab+') as label_file:
         lable_ind = 0
-        for path, subdirs, files in os.walk(os.path.join(data_path, "ILSVRC2012_img_train")):
+        for path, subdirs, files in os.walk(os.path.join(data_path, "ILSVRC2012_img_val")):
             for subdir in subdirs:
                 if subdir not in labels:
                     labels[subdir] = lable_ind
@@ -65,7 +66,6 @@ def create_txt():
             val_file.write("%s %s\n" % (image, val_set[image]))
 
 
-# raise Exception("not finish yet")
 # 2. change original data to lmdb using shell bash conver_imageset
 # 2.1 which need train.txt , test.txt and so on
 # (option) maybe need long time :(
@@ -84,5 +84,11 @@ def create_lmdb():
 
 
 if __name__ == "__main__":
-    # create_txt()
-    create_lmdb()
+    create_txt()
+    # create_lmdb()
+    train_txt = os.path.join(output_path, 'train.txt')
+    val_txt = os.path.join(output_path, 'val.txt')
+    train_lmdb = os.path.join(output_path, "img_train_lmdb")
+    val_lmdb = os.path.join(output_path, "img_val_lmdb")
+    cl.create_lmdb(train_txt_path=train_txt, train_lmdb_output_path=train_lmdb, val_txt_path=val_txt,
+                val_lmdb_output_path=val_lmdb, new_height=256, new_width=256, SHUFFLE=False)
