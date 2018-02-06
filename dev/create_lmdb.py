@@ -17,12 +17,12 @@ def create_lmdb(train_txt_path, train_lmdb_output_path, val_txt_path="", val_lmd
     assert os.path.isfile(train_txt_path), "{} does not exist".format(train_txt_path)
     if val_txt_path != "":
         assert os.path.isfile(val_txt_path), "{} does not exist".format(val_txt_path)
-    assert type(train_lmdb_output_path) == str, "train_lmdb_output_path is not a path"
+    assert isinstance(train_lmdb_output_path, str), "train_lmdb_output_path is not a path"
     if val_lmdb_output_path != "":
-        assert type(val_lmdb_output_path) == str, "val_lmdb_output_path is not a path"
-    assert type(new_width) == int and type(new_height) == int and new_width > 0 and new_height > 0, \
+        assert isinstance(val_lmdb_output_path, str), "val_lmdb_output_path is not a path"
+    assert isinstance(new_height, int) and isinstance(new_width, int) and new_width > 0 and new_height > 0, \
         "new_width and new_height should be positive integer"
-    assert type(SHUFFLE) == bool, "SHUFFLE should be bool"
+    assert isinstance(SHUFFLE, bool), "SHUFFLE should be bool"
 
     # Size of images
     IMAGE_WIDTH = new_width
